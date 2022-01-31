@@ -1,0 +1,545 @@
+
+/* Général */
+
+*,
+*::before,
+*::after
+{
+  box-sizing: border-box;
+}
+
+body
+{
+    font-family: 'Raleway', sans-serif;
+}
+
+header, main {
+    margin: auto;
+    max-width: 90%;
+}
+
+h1
+{
+    font-size: 20px;
+    margin-bottom: 3px;
+}
+
+h2 {
+    font-size: 18px;
+}
+
+h3 {
+    font-size: 16px;
+}
+
+a {
+    text-decoration: none;
+    color: initial;
+}
+
+p
+{
+    font-size: 14px;
+    margin-top: 2px;
+}
+
+/* Header */
+
+header
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 110px;
+}
+
+#logo
+{
+    max-width: 100%;
+    width: 100px;
+    height: auto;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    flex: 0.4;
+}
+
+nav a
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    font-size: 16px;
+    border-top: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+    text-align: center;
+}
+
+nav a:hover
+{
+    color: #0065FC;
+    border-top: 2px solid #0065FC;
+}
+
+@media screen and (max-width: 768px)
+{
+    header {
+        max-width: 100%;
+        margin: auto;
+        margin-top: 20px;        
+        flex-direction: column;
+    }
+
+    nav {
+        width: 100%;
+        flex: 1;
+    }
+
+    nav a:hover
+    {
+    color: #0065FC;
+    border-top: 2px solid transparent;
+    border-bottom: 2px solid #0065FC;
+    }
+}
+
+/* Recherche */
+
+form
+{
+    display: flex;
+    width: 350px;
+    height: 40px;
+    flex-direction: row;
+}
+
+.form_location
+{
+    display:flex;
+    width: 40px;
+    height: auto;
+    background-color: #F2F2F2;
+    border-radius: 10px 0 0 10px;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#city
+{
+    height: 100%;
+    width: 200px;
+    font-weight: bold;
+    border: solid #F2F2F2;
+}
+
+#submit
+{
+    height: 100%;
+    width: 110px;;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    background-color: #0065FC;
+    border: 0 transparent;
+    border-radius: 0 10px 10px 0;
+}
+#submit_icon {
+    width: 40px;
+    height: auto;
+    display: none;
+    border: 0 transparent;
+    border-radius: 0 10px 10px 0;
+    color: white;
+    background-color: #0065FC;
+}
+
+#submit:hover, #submit_icon:hover {
+    cursor: pointer; 
+}
+
+#submit:focus, #submit_icon:focus {
+    opacity: 0.5;
+    transition: opacity 0.5s;
+    animation: 1s linear infinite 
+}
+
+
+
+@media screen and (max-width: 768px)
+{
+    #submit
+    {
+    display: none;
+    }
+
+    #submit_icon {
+        display: block;
+    }
+}
+
+/* Filtre */
+
+#filter_wrapper {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    font-weight: bold;
+}
+
+#title_filter {
+    margin-right: 40px;
+    font-size: 16px;
+}
+
+#filter_button_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.button_model {
+    display: flex;
+    height: 40px;
+    margin: 5px 20px 5px 0;
+    align-items: center;
+    border: 2px solid#F2F2F2;   
+    border-radius: 25px; 
+    background-color: white;
+    padding-left: 0;
+    padding-right: 10px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+button:hover, button:focus {
+    cursor: pointer;
+    color: #DEEBFF;
+    background-color: #0065FC;
+}
+
+.button_model i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120%;
+    width: 40px;
+    border-radius: 100%;
+    color: #0065FC;
+    background-color: #DEEBFF;
+    margin-right: 5px;
+    font-size: 16px;
+}
+
+/* Information */
+
+#info {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+
+#info i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    width:15px;
+    height: 15px;
+    font-size: 8px;
+    color: #0065FC;
+    border: solid#F2F2F2;  
+}
+
+#info p {
+    margin: 0 0 0 5px;
+}
+
+@media screen and (max-width: 768px)
+{
+    #info {        
+        align-items: flex-start; 
+    }
+}
+
+/* Hébergement Marseille */
+
+#hebergement_wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    
+}
+
+#hebergement {    
+    width: 65%;
+    background-color: #F2F2F2;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+#hebergement h2 {
+    margin-top: 0;
+}
+
+#cards_wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: white;
+    border-radius: 15px;    
+    width: 30%;
+    padding: 5px;
+    box-shadow: 5px 5px 5px 5px #E2E2E2;
+}
+
+.cards:hover, .cards_popular:hover {
+    cursor: pointer;
+    transform: scale(1.02);
+    transition: ease 0.3s;
+  }
+
+ .cards img {
+     object-fit: cover;
+     width: 100%;
+     height: 120px;
+     border-radius: 15px 15px 0 0;
+
+ }
+
+ .cards_description {
+     width: 95%;
+ }
+
+ .cards_description div {
+     margin-top: 5px;
+     font-size: 12px;
+ }
+
+ .cards_venue_name {
+     font-size: 14px;
+ }
+
+ .fas.fa-star.blue {
+    color: #0065FC;
+ }
+
+ .fas.fa-star.grey {
+    color: #F2F2F2;
+ }
+
+ #see_more {
+    font-weight: bold;
+ }
+
+ #popular {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    background-color: #F2F2F2;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+#popular_title {
+    display: flex;
+    justify-content: space-between;
+}
+
+#popular_title h2 {
+    margin-top: 0;
+}
+
+#cards_wrapper_popular {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cards_popular {
+    display: flex;
+    margin-bottom: 20px;
+    background-color: white;
+    border-radius: 15px;
+    padding: 5px;
+    box-shadow: 5px 5px 5px 5px #E2E2E2;
+}
+
+.cards_popular img {
+    object-fit: cover;
+    width: 70%;
+    height: 150px;
+    border-radius: 15px 0 0 15px;
+
+}
+
+.aside_popular {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 95%;
+    padding: 0 10px 10px 10px
+}
+
+.aside_popular div {
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+@media screen and (max-width: 768px)
+{
+    #hebergement_wrapper {
+        flex-direction: column;
+        gap: 20px;        
+    }
+
+    #hebergement {
+        order: 2;
+        width: 100%;
+    }
+
+    #cards_wrapper {
+        flex-direction: column;
+    }
+
+    .cards {
+        width: 100%
+    }
+
+    #popular {
+        order: 1;
+        width: 100%;
+    }
+}
+
+/* Activites */
+#activities_wrapper {    
+    margin-bottom: 50px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 3fr 0.3fr 0.3fr 0.3fr 3fr;
+    grid-gap: 30px;
+    grid-template-areas: 
+      "activity-1 activity-2 activity-4 activity-5"
+      "activity-1 activity-2 activity-4 activity-5"
+      "activity-1 activity-2 activity-4 activity-6"
+      "activity-1 activity-3 activity-4 activity-6"
+      "activity-1 activity-3 activity-4 activity-6";
+  }
+  
+#activities_wrapper .activity_card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px 5px #E2E2E2;
+}
+  
+.activity_card img {
+    object-fit: cover;
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+  
+#activities_wrapper .card_title {
+    position: absolute;
+    width: 100%;
+    background-color: white;
+    border-radius: 0 0 20px 20px;
+    padding: 20px 0 20px 5%;
+    margin: 0;
+    bottom: 0;
+}
+  
+.activity_card_wrapper {
+    height: 100%;
+}
+  
+#activity_grid_1 {
+    grid-area: activity-1;
+}
+#activity_grid_2 {
+    grid-area: activity-2;  
+}
+#activity_grid_3 {
+    grid-area: activity-3;
+}
+#activity_grid_4 {
+    grid-area: activity-4;
+}
+#activity_grid_5 {
+    grid-area: activity-5;
+}
+#activity_grid_6 {
+    grid-area: activity-6;
+}
+  
+#activities_wrapper .activity_card:hover {
+    cursor: pointer;
+    transform: scale(1.02);
+    transition: ease 0.3s;    
+}
+
+@media screen and (max-width: 768px) {
+    #activities_wrapper {
+        display: grid;
+        height: auto;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6,0.5fr);
+        grid-template-areas:
+        "activity-1"
+        "activity-2"
+        "activity-3"
+        "activity-4"
+        "activity-5"
+        "activity-6";
+    }
+}   
+/* Footer */
+  
+footer
+{
+    display: flex;
+    background-color: #F2F2F2;
+    justify-content: center;
+    padding: 10px 0 40px 0;
+}
+
+.footer_group {
+    width: 30%
+}
+
+.footer_link {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer_link  a {
+    padding: 10px 0;
+}
+
+@media screen and (max-width: 768px) {
+    footer
+    {
+    flex-direction: column;
+    align-items: center;
+    }   
+    .footer_group{
+        width: 90%
+    }    
+
+}
